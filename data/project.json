@@ -1,0 +1,123 @@
+{
+  "project": {
+    "name": "BrahmaSutrasOnline",
+    "version": "0.1.0",
+    "tagline": "Study. Understand. Contemplate.",
+    "language": "en",
+    "defaultScript": "Devanagari",
+    "transliteration": "IAST",
+    "lastUpdated": "2026-08-10"
+  },
+
+  "content": {
+    "totalAdhyayas": 4,
+    "totalPadas": 16,
+    "totalSutras": 555,
+
+    "sections": [
+      {
+        "adhyaya": 1,
+        "name": "Samanvaya Adhyāya",
+        "padas": [
+          {
+            "pada": 1,
+            "sutras": 32,
+            "file": "data/adhyaya1/pada1.json"
+          },
+          {
+            "pada": 2,
+            "sutras": 41,
+            "file": "data/adhyaya1/pada2.json"
+          },
+          {
+            "pada": 3,
+            "sutras": 43,
+            "file": "data/adhyaya1/pada3.json"
+          },
+          {
+            "pada": 4,
+            "sutras": 28,
+            "file": "data/adhyaya1/pada4.json"
+          }
+        ]
+      },
+      {
+        "adhyaya": 2,
+        "name": "Avirodha Adhyāya",
+        "padas": [
+          {
+            "pada": 1,
+            "file": "data/adhyaya2/pada1.json"
+          },
+          {
+            "pada": 2,
+            "file": "data/adhyaya2/pada2.json"
+          },
+          {
+            "pada": 3,
+            "file": "data/adhyaya2/pada3.json"
+          },
+          {
+            "pada": 4,
+            "file": "data/adhyaya2/pada4.json"
+          }
+        ]
+      },
+      {
+        "adhyaya": 3,
+        "name": "Sādhana Adhyāya",
+        "padas": [
+          {
+            "pada": 1,
+            "file": "data/adhyaya3/pada1.json"
+          },
+          {
+            "pada": 2,
+            "file": "data/adhyaya3/pada2.json"
+          },
+          {
+            "pada": 3,
+            "file": "data/adhyaya3/pada3.json"
+          },
+          {
+            "pada": 4,
+            "file": "data/adhyaya3/pada4.json"
+          }
+        ]
+      },
+      {
+        "adhyaya": 4,
+        "name": "Phala Adhyāya",
+        "padas": [
+          {
+            "pada": 1,
+            "file": "data/adhyaya4/pada1.json"
+          },
+          {
+            "pada": 2,
+            "file": "data/adhyaya4/pada2.json"
+          },
+          {
+            "pada": 3,
+            "file": "data/adhyaya4/pada3.json"
+          },
+          {
+            "pada": 4,
+            "file": "data/adhyaya4/pada4.json"
+          }
+        ]
+      }
+    ]
+  },
+
+  "features": {
+    "search": true,
+    "dailySutra": true,
+    "crossReferences": true,
+    "commentaries": true,
+    "glossary": true,
+    "bookmarks": false,
+    "darkMode": false,
+    "audio": false
+  }
+}
