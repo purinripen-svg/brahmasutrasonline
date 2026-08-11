@@ -1,0 +1,33 @@
+{
+  "project": {
+    "name": "BrahmaSutrasOnline",
+    "version": "0.1.0",
+    "tagline": "Study. Understand. Contemplate."
+  },
+  "content": {
+    "adhyayas": [
+      {
+        "number": 1,
+        "title": "Samanvaya Adhyāya",
+        "padas": [
+          { "number": 1, "file": "data/adhyaya1/pada1.json" },
+          { "number": 2, "file": "data/adhyaya1/pada2.json" },
+          { "number": 3, "file": "data/adhyaya1/pada3.json" },
+          { "number": 4, "file": "data/adhyaya1/pada4.json" }
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Avirodha Adhyāya"
+      },
+      {
+        "number": 3,
+        "title": "Sādhana Adhyāya"
+      },
+      {
+        "number": 4,
+        "title": "Phala Adhyāya"
+      }
+    ]
+  }
+}
