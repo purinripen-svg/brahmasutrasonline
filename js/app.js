@@ -1,84 +1,57 @@
 /*
+ * ==========================================================================
  * BrahmaSutrasOnline
  * js/app.js
  * Version: 0.1.0
+ *
+ * Uses the data-loader API for dataset access and navigation.
+ * ==========================================================================
  */
 
 'use strict';
 
-const CONFIG = {
-    dataFile: 'data/sample-sutras.json'
-};
+import { getDailySutra, getSutraById, getNextSutra, getPreviousSutra } from './data-loader.js';
 
-let sutraData = [];
+let currentSutra = null;
 
 /**
- * Load the JSON dataset.
+ * Load the sutra for today using the data-loader API.
  */
 async function loadData() {
     try {
-        const response = await fetch(CONFIG.dataFile);
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const json = await response.json();
-        sutraData = json.sutras || [];
-
-        renderDailySutra();
+        const sutra = await getDailySutra();
+        currentSutra = sutra || null;
+        if (sutra) renderSutra(sutra);
+        else showLoadError();
 
     } catch (error) {
         console.error('Unable to load data:', error);
+        showLoadError();
+    }
+}
 
-        const container = document.getElementById('daily-sutra');
-
-        if (container) {
-            container.innerHTML = `
-                <div class="error">
-                    Unable to load the Brahma Sūtras dataset.
-                </div>
-            `;
-        }
+function showLoadError() {
+    const container = document.getElementById('daily-sutra');
+    if (container) {
+        container.innerHTML = `
+            <div class="error">
+                Unable to load the Brahma Sūtras dataset.
+            </div>
+        `;
     }
 }
 
 /**
- * Returns today's Sutra (UTC-based day index for consistent rotation).
+ * Render a sutra object safely.
+ * @param {Object} sutra
  */
-function getDailySutra() {
-
-    if (sutraData.length === 0)
-        return null;
-
-    // Use UTC day to keep the same sutra globally for the same UTC day
-    const day = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
-
-    return sutraData[day % sutraData.length];
-}
-
-/**
- * Render Sutra of the Day safely (avoid innerHTML with untrusted data).
- */
-function renderDailySutra() {
-
+function renderSutra(sutra) {
     const container = document.getElementById('daily-sutra');
+    if (!container) return;
 
-    if (!container)
-        return;
-
-    // Mark that content may update dynamically for screen readers
     container.setAttribute('aria-live', 'polite');
 
-    const sutra = getDailySutra();
-
-    if (!sutra) {
-        container.textContent = 'No sutra available.';
-        return;
-    }
-
     try {
-        // Clear existing contents
         while (container.firstChild) container.removeChild(container.firstChild);
 
         const h2 = document.createElement('h2');
@@ -86,7 +59,6 @@ function renderDailySutra() {
 
         const sanskritDiv = document.createElement('div');
         sanskritDiv.className = 'sanskrit';
-        // If Sanskrit text is used, it's helpful to mark the language
         sanskritDiv.lang = 'sa';
         sanskritDiv.textContent = sutra.sanskrit || '';
 
@@ -110,15 +82,58 @@ function renderDailySutra() {
         container.appendChild(a);
 
     } catch (e) {
-        console.error('Error rendering daily sutra:', e);
+        console.error('Error rendering sutra:', e);
         container.textContent = 'Error displaying sutra.';
     }
 }
 
 /**
+ * Show next sutra (if available) and update currentSutra.
+ */
+async function showNextSutra() {
+    if (!currentSutra || currentSutra.id == null) return;
+    try {
+        const next = await getNextSutra(currentSutra.id);
+        if (next) {
+            currentSutra = next;
+            renderSutra(next);
+        }
+    } catch (e) {
+        console.error('Failed to load next sutra:', e);
+    }
+}
+
+/**
+ * Show previous sutra (if available) and update currentSutra.
+ */
+async function showPreviousSutra() {
+    if (!currentSutra || currentSutra.id == null) return;
+    try {
+        const prev = await getPreviousSutra(currentSutra.id);
+        if (prev) {
+            currentSutra = prev;
+            renderSutra(prev);
+        }
+    } catch (e) {
+        console.error('Failed to load previous sutra:', e);
+    }
+}
+
+/**
+ * Wire up navigation buttons if present.
+ */
+function setupNavigation() {
+    const nextBtn = document.getElementById('sutra-next');
+    const prevBtn = document.getElementById('sutra-prev');
+
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); showNextSutra(); });
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); showPreviousSutra(); });
+}
+
+/**
  * Initialize app.
  */
-document.addEventListener(
-    'DOMContentLoaded',
-    loadData
-);
+document.addEventListener('DOMContentLoaded', async () => {
+    setupNavigation();
+    await loadData();
+});
