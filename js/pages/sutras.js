@@ -9,6 +9,7 @@
 
 import { getAllSutras } from "../data-loader.js";
 import { search } from "../search.js";
+import { createSutraCard } from "../components/sutraCard.js";
 
 let allSutras = [];
 
@@ -19,49 +20,12 @@ let allSutras = [];
  * @returns {string}
  */
 function escapeHtml(value) {
-    return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
-}
-
-/**
- * Create a single sutra card.
- *
- * @param {Object} sutra
- * @returns {string}
- */
-function createCard(sutra) {
-    return `
-        <article class="sutra-card">
-
-            <header>
-                <h2>${escapeHtml(sutra.sutraNumber)}</h2>
-            </header>
-
-            <p class="sanskrit">
-                ${escapeHtml(sutra.sanskrit)}
-            </p>
-
-            <p class="iast">
-                ${escapeHtml(sutra.iast)}
-            </p>
-
-            <p class="translation">
-                ${escapeHtml(sutra.translation)}
-            </p>
-
-            <a
-                class="button"
-                href="sutra.html?id=${encodeURIComponent(sutra.id)}"
-            >
-                Study →
-            </a>
-
-        </article>
-    `;
+   return String(value ?? "")
+       .replaceAll("&", "&amp;")
+       .replaceAll("<", "&lt;")
+       .replaceAll(">", "&gt;")
+       .replaceAll('"', "&quot;")
+       .replaceAll("'", "&#39;");
 }
 
 /**
@@ -90,7 +54,7 @@ function renderList(sutras) {
 
     container.innerHTML =
         sutras
-            .map(createCard)
+            .map(sutra => createSutraCard(sutra))
             .join("");
 }
 
