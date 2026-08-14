@@ -256,3 +256,31 @@ p {
         var(--color-muted);
 
 }
+
+/* ==========================================================================
+   Feature Grid
+   ========================================================================== */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.feature-grid a {
+    display: block;
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-text);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-grid a:hover,
+.feature-grid a:focus {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
