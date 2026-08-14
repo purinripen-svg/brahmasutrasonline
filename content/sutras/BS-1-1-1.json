@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+
+  "id": "BS-1-1-1",
+
+  "number": "1.1.1",
+
+  "slug": "atha-ato-brahma-jijnasa",
+
+  "adhyaya": 1,
+
+  "pada": 1,
+
+  "sutra": 1,
+
+  "title": "Atha Ato Brahma Jijñāsā",
+
+  "status": "published",
+
+  "text": {
+    "sanskrit": "अथातो ब्रह्मजिज्ञासा",
+    "iast": "athāto brahmajijñāsā"
+  },
+
+  "summary": "The opening sūtra introduces the inquiry into Brahman and marks the beginning of the philosophical investigation undertaken in the Brahma Sūtras.",
+
+  "keywords": [
+    "Brahman",
+    "Vedanta",
+    "Inquiry",
+    "Badarayana"
+  ],
+
+  "translations": [],
+
+  "commentaries": [],
+
+  "references": [
+    {
+      "type": "upanishad",
+      "status": "planned"
+    },
+    {
+      "type": "bhagavad-gita",
+      "status": "planned"
+    }
+  ],
+
+  "glossary": [
+    "brahman",
+    "jijnasa"
+  ],
+
+  "editorial": {
+    "reviewStatus": "verified",
+    "lastReviewed": "2026-08-14",
+    "reviewedBy": "",
+    "sourceEdition": "",
+    "notes": ""
+  }
+}
