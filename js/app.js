@@ -137,3 +137,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupNavigation();
     await loadData();
 });
+
+// App version log (append init snippet)
+const APP_VERSION = '0.1.0';
+
+function initApp() {
+  if (typeof document === 'undefined') return;
+  document.addEventListener('DOMContentLoaded', () => {
+    console.info(`BrahmaSutrasOnline v${APP_VERSION}`);
+  });
+}
+
+// Run initialization
+initApp();
