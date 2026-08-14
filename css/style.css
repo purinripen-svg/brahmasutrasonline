@@ -1,0 +1,258 @@
+/****************************************************************************
+ * BrahmaSutrasOnline
+ * Global Styles
+ * Version: 0.1.0
+ ****************************************************************************/
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+
+    --color-primary: #8B5E3C;
+    --color-primary-dark: #6F492D;
+
+    --color-background: #FFFDF8;
+    --color-surface: #FFFFFF;
+
+    --color-text: #222222;
+    --color-muted: #666666;
+
+    --color-border: #E5E5E5;
+
+    --color-link: #8B5E3C;
+
+    --shadow-sm:
+        0 2px 6px rgba(0,0,0,.08);
+
+    --radius: 10px;
+
+    --space-1: .5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+
+    --max-width: 1200px;
+
+    --transition:
+        180ms ease;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.7;
+
+    background:
+        var(--color-background);
+
+    color:
+        var(--color-text);
+
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+main {
+
+    width: min(
+        100%,
+        var(--max-width)
+    );
+
+    margin: auto;
+
+    padding: var(--space-4);
+
+}
+
+section {
+
+    margin-block: 4rem;
+
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1,
+h2,
+h3 {
+
+    line-height: 1.2;
+
+    margin-bottom: 1rem;
+
+}
+
+h1 {
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        3rem
+    );
+
+}
+
+p {
+
+    margin-bottom: 1rem;
+
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+
+    text-align: center;
+
+    padding: 5rem 0;
+
+}
+
+.hero p {
+
+    max-width: 700px;
+
+    margin:
+        auto auto
+        2rem;
+
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.button {
+
+    display: inline-block;
+
+    padding:
+        .85rem
+        1.5rem;
+
+    background:
+        var(--color-primary);
+
+    color: white;
+
+    border-radius:
+        var(--radius);
+
+    text-decoration: none;
+
+    transition:
+        var(--transition);
+
+}
+
+.button:hover {
+
+    background:
+        var(--color-primary-dark);
+
+}
+
+/* ==========================================================================
+   Sutra Cards
+   ========================================================================== */
+
+.sutra-card {
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius);
+
+    padding:
+        var(--space-3);
+
+    box-shadow:
+        var(--shadow-sm);
+
+    margin-bottom:
+        var(--space-3);
+
+}
+
+.sanskrit {
+
+    font-size: 1.4rem;
+
+    margin-bottom: .5rem;
+
+}
+
+.iast {
+
+    color:
+        var(--color-muted);
+
+    font-style: italic;
+
+}
+
+.translation {
+
+    margin-top: 1rem;
+
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+
+    border-top:
+        1px solid
+        var(--color-border);
+
+    padding:
+        3rem 2rem;
+
+    text-align: center;
+
+    color:
+        var(--color-muted);
+
+}
