@@ -10,33 +10,38 @@
 
 :root {
 
-    --color-primary: #8B5E3C;
+    /* New theme variables (merged) */
+    --primary: #4b2e1e;
+    --secondary: #b08d57;
+    --background: #faf7f2;
+    --text: #222;
+
+    --radius: 12px;
+
+    --max-width: 1200px;
+
+    /* Backwards-compatible mappings for existing code */
+    --color-primary: var(--primary);
     --color-primary-dark: #6F492D;
 
-    --color-background: #FFFDF8;
+    --color-background: var(--background);
     --color-surface: #FFFFFF;
 
-    --color-text: #222222;
+    --color-text: var(--text);
     --color-muted: #666666;
 
     --color-border: #E5E5E5;
 
-    --color-link: #8B5E3C;
+    --color-link: var(--primary);
 
-    --shadow-sm:
-        0 2px 6px rgba(0,0,0,.08);
-
-    --radius: 10px;
+    --shadow-sm: 0 2px 6px rgba(0,0,0,.08);
 
     --space-1: .5rem;
     --space-2: 1rem;
     --space-3: 1.5rem;
     --space-4: 2rem;
 
-    --max-width: 1200px;
-
-    --transition:
-        180ms ease;
+    --transition: 180ms ease;
 }
 
 /* ==========================================================================
