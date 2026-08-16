@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sūtra | BrahmaSutrasOnline</title>
+
+    <meta
+        name="description"
+        content="Read and study an individual Brahma Sūtra."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/pages/sutra.js"></script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="container">
+
+        <a href="index.html" class="logo">
+            BrahmaSutrasOnline
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="sutras.html">Sūtras</a>
+            <a href="glossary.html">Glossary</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </div>
+</header>
+
+<main id="main" class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true"> / </span>
+        <a href="sutras.html">Sūtras</a>
+        <span aria-hidden="true"> / </span>
+        <span id="breadcrumb-number">Sūtra</span>
+    </nav>
+
+    <div id="sutra-loading" aria-live="polite">
+        Loading sūtra…
+    </div>
+
+    <article id="sutra-content" hidden>
+
+        <header class="sutra-header">
+
+            <p id="sutra-number" class="sutra-number"></p>
+
+            <h1 id="sutra-title"></h1>
+
+        </header>
+
+        <section class="sutra-primary-text">
+
+            <h2>Original Text</h2>
+
+            <p
+                id="sutra-sanskrit"
+                class="sutra-sanskrit"
+                lang="sa"
+            ></p>
+
+            <p
+                id="sutra-iast"
+                class="sutra-iast"
+            ></p>
+
+        </section>
+
+        <section id="translation-section">
+
+            <h2>Translation</h2>
+
+            <div id="sutra-translations"></div>
+
+        </section>
+
+        <section id="summary-section">
+
+            <h2>Explanation</h2>
+
+            <p id="sutra-summary"></p>
+
+        </section>
+
+        <section id="commentary-section">
+
+            <h2>Traditional Commentaries</h2>
+
+            <div id="sutra-commentaries"></div>
+
+        </section>
+
+        <section id="references-section">
+
+            <h2>References</h2>
+
+            <ul id="sutra-references"></ul>
+
+        </section>
+
+    </article>
+
+    <div
+        id="sutra-error"
+        class="error-message"
+        role="alert"
+        hidden
+    ></div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© BrahmaSutrasOnline</p>
+    </div>
+</footer>
+
+</body>
+</html>
