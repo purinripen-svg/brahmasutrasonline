@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+
+  "id": "BS-1-1-1",
+  "number": "1.1.1",
+
+  "text": {
+    "sanskrit": "अथातो ब्रह्मजिज्ञासा",
+    "iast": "athāto brahmajijñāsā"
+  },
+
+  "sources": [
+    {
+      "type": "primary-text",
+      "edition": "",
+      "editor": "",
+      "publisher": "",
+      "year": "",
+      "page": ""
+    }
+  ],
+
+  "editorial": {
+    "status": "draft",
+    "textVerified": false,
+    "metadataVerified": false,
+    "commentaryReviewed": false
+  }
+}
