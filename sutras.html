@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse Sūtras | BrahmaSutrasOnline</title>
+
+    <meta
+        name="description"
+        content="Browse the Brahma Sūtras by Adhyāya and Pāda."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/pages/sutras.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            BrahmaSutrasOnline
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="sutras.html" aria-current="page">Sūtras</a>
+            <a href="glossary.html">Glossary</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <header class="page-header">
+        <h1>Browse the Brahma Sūtras</h1>
+        <p>
+            Explore the sūtras by Adhyāya, Pāda, or search term.
+        </p>
+    </header>
+
+    <section class="sutra-controls" aria-label="Sūtra search and filters">
+
+        <label for="sutra-search">
+            Search Sūtras
+        </label>
+
+        <input
+            id="sutra-search"
+            type="search"
+            placeholder="Search by number, title, or keyword"
+            autocomplete="off"
+        >
+
+        <label for="adhyaya-filter">
+            Adhyāya
+        </label>
+
+        <select id="adhyaya-filter">
+            <option value="">All Adhyāyas</option>
+            <option value="1">Adhyāya 1</option>
+            <option value="2">Adhyāya 2</option>
+            <option value="3">Adhyāya 3</option>
+            <option value="4">Adhyāya 4</option>
+        </select>
+
+        <label for="pada-filter">
+            Pāda
+        </label>
+
+        <select id="pada-filter">
+            <option value="">All Pādas</option>
+            <option value="1">Pāda 1</option>
+            <option value="2">Pāda 2</option>
+            <option value="3">Pāda 3</option>
+            <option value="4">Pāda 4</option>
+        </select>
+
+    </section>
+
+    <p
+        id="result-count"
+        class="result-count"
+        aria-live="polite"
+    ></p>
+
+    <section
+        id="sutra-list"
+        class="sutra-grid"
+        aria-label="Sūtra results"
+    ></section>
+
+    <nav
+        id="pagination"
+        class="pagination"
+        aria-label="Sūtra pagination"
+    ></nav>
+
+    <div
+        id="sutra-error"
+        class="error-message"
+        role="alert"
+        hidden
+    ></div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© BrahmaSutrasOnline</p>
+    </div>
+</footer>
+
+</body>
+</html>
