@@ -1,0 +1,6 @@
+{ "title": "feat(ui): add sutra card and sutras page",
+  "head": "feature/sutra-card",
+  "base": "main",
+  "body": "Adds a DOM-safe sutra card component, styles, search, and a sutras listing page.\n\nFiles added:\n- js/components/sutraCard.js\n- css/components/sutraCard.css\n- sutras.html\n- js/pages/sutras.js\n- js/services/searchService.js\n\nSee feature/sutra-card for implementation details.",
+  "maintainer_can_modify": true
+}
