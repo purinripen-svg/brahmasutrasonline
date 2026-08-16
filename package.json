@@ -1,0 +1,8 @@
+{
+  "name": "brahmasutrasonline",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "validate:content": "node scripts/validate-content.mjs"
+  }
+}
