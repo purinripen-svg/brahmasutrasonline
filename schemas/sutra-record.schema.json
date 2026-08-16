@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "title": "BrahmaSutra Record",
+
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "id",
+    "number",
+    "slug",
+    "adhyaya",
+    "pada",
+    "sutra",
+    "title",
+    "text"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+
+    "id": {
+      "type": "string",
+      "pattern": "^BS-[1-4]-[1-4]-[0-9]+$"
+    },
+
+    "number": {
+      "type": "string",
+      "pattern": "^[1-4]\\.[1-4]\\.[0-9]+$"
+    },
+
+    "slug": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "adhyaya": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+
+    "pada": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+
+    "sutra": {
+      "type": "integer",
+      "minimum": 1
+    },
+
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review",
+        "published"
+      ]
+    },
+
+    "text": {
+      "type": "object",
+      "required": [
+        "sanskrit",
+        "iast"
+      ],
+      "properties": {
+        "sanskrit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "iast": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "summary": {
+      "type": "string"
+    },
+
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "translations": {
+      "type": "array"
+    },
+
+    "commentaries": {
+      "type": "array"
+    },
+
+    "references": {
+      "type": "array"
+    },
+
+    "glossary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "editorial": {
+      "type": "object"
+    }
+  },
+
+  "additionalProperties": false
+}
