@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BrahmaSutra Index Record",
+  "type": "object",
+  "required": [
+    "id",
+    "number",
+    "adhyaya",
+    "pada",
+    "sutra",
+    "slug",
+    "title",
+    "path"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^BS-[1-4]-[1-4]-[0-9]+$"
+    },
+    "number": {
+      "type": "string",
+      "pattern": "^[1-4]\\.[1-4]\\.[0-9]+$"
+    },
+    "adhyaya": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "pada": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "sutra": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
